@@ -1,8 +1,21 @@
-# Welcome to your CDK TypeScript project
+# MusicNU Infrastructure CDK Repo
 
-This is a blank project for CDK development with TypeScript.
+This repository will contain all of the infrastructure necessary to run the MusicNU application.
+It is defined in [CDK](https://aws.amazon.com/cdk/) for ease of maintenance.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+# Deploying the TrustStack
+
+The TrustStack must be deployed to AWS IAM to enable updating the infrastructure through
+Github Actions.
+
+Run the following:
+
+```
+AWS_PROFILE=<your-profile> npx cdk deploy TrustStack --parameters GitHubOrg=<your-org> --parameters GitHubRepo=<your-repo>
+```
+
+This will create the IAM provider for the repo. After that, all deployments through Github
+Actions should have permissions to change the AWS account. 
 
 ## Useful commands
 

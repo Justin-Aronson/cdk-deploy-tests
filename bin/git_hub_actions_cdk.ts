@@ -2,7 +2,7 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { TrustStack } from '../lib/TrustStack';
-import { LambdaStack } from '../lib/LambdaStack';
+import { DynamicsStack } from '../lib/DynamicsStack';
 
 const app = new cdk.App();
 new TrustStack(app, 'TrustStack', {
@@ -21,4 +21,4 @@ new TrustStack(app, 'TrustStack', {
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
 
-new LambdaStack(app, "LambdaStack", {});
+new DynamicsStack(app, "DynamicsStack", {});
